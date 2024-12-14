@@ -16,9 +16,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
-    var num1 : Double!
-    var num2 : Double!
-    var result : Double!
+    var num1 : Float!
+    var num2 : Float!
+    var result : Float!
     
     override func viewDidLoad() {
         
@@ -29,29 +29,29 @@ class ViewController: UIViewController {
     
     func worker(process : String){
         
-        if  textField1.text != nil && textField2.text != nil  {
+        if  textField1.text != ""  && textField2.text != "" {
             
             if process == "+" {
-                num1 = Double(textField1.text!) ?? 0
-                num2 = Double(textField2.text!) ?? 0
+                num1 = Float(textField1.text!) ?? 0
+                num2 = Float(textField2.text!) ?? 0
                 result  = num1 + num2
             }
             
             if process == "-" {
-                num1 = Double(textField1.text!) ?? 0
-                num2 = Double(textField2.text!) ?? 0
+                num1 = Float(textField1.text!) ?? 0
+                num2 = Float(textField2.text!) ?? 0
                 result  = num1 - num2
             }
             if process == "*" {
-                num1 = Double(textField1.text!) ?? 0
-                num2 = Double(textField2.text!) ?? 0
+                num1 = Float(textField1.text!) ?? 0
+                num2 = Float(textField2.text!) ?? 0
                 result  = num1 * num2
             
             }
             if process == "/" {
                 
-                num1 = Double(textField1.text!) ?? 1
-                num2 = Double(textField2.text!) ?? 0
+                num1 = Float(textField1.text!) ?? 1
+                num2 = Float(textField2.text!) ?? 0
                 result  = num1 / num2
             }
             
@@ -77,12 +77,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func divisionButton(_ sender: Any) {
-        worker(process: "*")
+        worker(process: "/")
     }
     
     
     @IBAction func multipButton(_ sender: Any) {
-        worker(process: "/")
+        worker(process: "*")
     }
     
 }
